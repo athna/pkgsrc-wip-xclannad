@@ -1,0 +1,16 @@
+$NetBSD$
+
+SHA1 (xclannad-7hc.tar.gz) = fbe63701a47a1bc90aca8ab8d0b41ca3b5c9d114
+RMD160 (xclannad-7hc.tar.gz) = a7bea485587c59d7797aa1bde01f0eb963122d02
+Size (xclannad-7hc.tar.gz) = 534245 bytes
+SHA1 (patch-Makefile.in) = 3586afaf131737ded3ac1b64bfa56b3c357f3269
+SHA1 (patch-font_text__stream.cc) = 54ca7009cac7a06793daa64ddb79a875f5d64cbe
+SHA1 (patch-music2_music.cc) = fe8c90d9901a86dc6c799a1482ffe8ca7ca53c98
+SHA1 (patch-scn2k_scn2k__cmd.cc) = cd13290660eab7748998e46782e751748f8d4685
+SHA1 (patch-scn2k_scn2k__grp.cc) = cf0c7efa5fcac698873665b9b51f98b62344fb1d
+SHA1 (patch-scn2k_scn2k__text.cc) = 2c3dc6fc5b09546f384a2d34ce6923563fbf24b6
+SHA1 (patch-system_file.cc) = 235195d14e5bd6bbb7c1b5da6ff3dabba04abadc
+SHA1 (patch-system_file.h) = f5a759c4716b8ecdb84672de017cb92dbe36e058
+SHA1 (patch-window_SDL__rotozoom.cc) = 7f21616ba4889df0b70fa11c57eb378c3a3ac369
+SHA1 (patch-window_button.cc) = 301d30641ee6342803e2d5307118d25b31d165cc
+SHA1 (patch-window_picture.cc) = dacce976d13167f18a5a3186840f6625277c3bfc
