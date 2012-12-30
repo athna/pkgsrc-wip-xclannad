@@ -9,9 +9,7 @@ MASTER_SITES=	http://www.creator.club.ne.jp/~jagarl/
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.creator.club.ne.jp/~jagarl/
 COMMENT=	Interpretor to execute REALLIVE games for Microsoft Windows
-#LICENSE=	# TODO: (see mk/license.mk)
-
-#PKG_DESTDIR_SUPPORT=	user-destdir
+LICENSE=	modified-bsd AND gnu-gpl-v2
 
 WRKSRC=		${WRKDIR}/xclannad-0.07h
 GNU_CONFIGURE=  yes
