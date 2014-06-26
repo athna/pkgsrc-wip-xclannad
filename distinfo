@@ -11,6 +11,7 @@ SHA1 (patch-scn2k_scn2k__grp.cc) = cf0c7efa5fcac698873665b9b51f98b62344fb1d
 SHA1 (patch-scn2k_scn2k__text.cc) = 2c3dc6fc5b09546f384a2d34ce6923563fbf24b6
 SHA1 (patch-system_file.cc) = 235195d14e5bd6bbb7c1b5da6ff3dabba04abadc
 SHA1 (patch-system_file.h) = f5a759c4716b8ecdb84672de017cb92dbe36e058
+SHA1 (patch-system_system__config.cc) = 28707a1e9f489f655db18595cead0aa908175b53
 SHA1 (patch-window_SDL__rotozoom.cc) = 7f21616ba4889df0b70fa11c57eb378c3a3ac369
 SHA1 (patch-window_button.cc) = 301d30641ee6342803e2d5307118d25b31d165cc
 SHA1 (patch-window_picture.cc) = dacce976d13167f18a5a3186840f6625277c3bfc
