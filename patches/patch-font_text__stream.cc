@@ -4,8 +4,12 @@ $NetBSD$
 
 --- font/text_stream.cc.orig	2008-08-31 15:11:10.000000000 +0000
 +++ font/text_stream.cc
-@@ -92,7 +92,7 @@ void TextStream::Add(const char* str) {
- 		if (*str >= 0x20) {
+@@ -89,10 +89,10 @@ void TextStream::Clear(void) {
+ void TextStream::Add(const char* str) {
+ 	TextElem elem;
+ 	for (; *str; str++) {
+-		if (*str >= 0x20) {
++		if (*str >= 0x20 && (*str & 0x80) == 0) {
  			elem.type = TextElem::glyph;
  			elem.impl.Glyph.code = *str;
 -		} else if (*str < 0 && str[1] != 0) {
