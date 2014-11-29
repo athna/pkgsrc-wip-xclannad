@@ -21,6 +21,15 @@ USE_LANGUAGES=	c c++
 CONFIGURE_ARGS+=	--with-audiodev=/dev/audio
 .endif
 
+SUBST_CLASSES+=		path
+SUBST_MESSAGE.path=	Fixing hardcoded paths.
+SUBST_STAGE.path=	post-patch
+SUBST_FILES.path=	configure font/font_peer_ft2.cc
+SUBST_SED.path=		-e 's|/usr/local/|${PREFIX}/|g'
+SUBST_SED.path+=	-e 's|/usr/pkg/|${PREFIX}/|g'
+SUBST_SED.path+=	-e 's|/usr/X11R6/|${X11BASE}/|g'
+SUBST_SED.path+=	-e 's|/usr/X11R7/|${X11BASE}/|g'
+
 .include "../../devel/zlib/buildlink3.mk"
 BUILDLINK_API_DEPENDS.gtk2+=    gtk2+>=2.6.0
 .include "../../audio/SDL_mixer/buildlink3.mk"
