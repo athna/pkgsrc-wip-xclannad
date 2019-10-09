@@ -13,7 +13,7 @@ LICENSE=	modified-bsd AND gnu-gpl-v2
 
 WRKSRC=		${WRKDIR}/xclannad-0.07h
 GNU_CONFIGURE=  yes
-USE_LANGUAGES=	c c++
+USE_LANGUAGES=	c c++03
 
 .include "../../mk/bsd.prefs.mk"
 
