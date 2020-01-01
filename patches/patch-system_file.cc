@@ -4,44 +4,39 @@ $NetBSD$
 
 --- system/file.cc.orig	2008-08-31 09:52:12.000000000 +0000
 +++ system/file.cc
-@@ -1161,6 +1161,10 @@ public:
+@@ -1161,14 +1161,8 @@ public:
  		lsrc += 2;
  	}
  	static void Copy1Pixel(const char*& lsrc, char*& ldest) {
-+#ifdef __NetBSD__
+-#ifdef WORDS_BIGENDIAN
+-		ldest[3] = lsrc[0];
+-		ldest[2] = lsrc[1];
+-		ldest[1] = lsrc[2];
+-		ldest[0] = 0;
+-#else
+-		*(int*)ldest = read_little_endian_int(lsrc); ldest[3]=0;
+-#endif
 +		memcpy(ldest, lsrc, 3);
 +		ldest[3] = 0;
-+#else
- #ifdef WORDS_BIGENDIAN
- 		ldest[3] = lsrc[0];
- 		ldest[2] = lsrc[1];
-@@ -1169,6 +1173,7 @@ public:
- #else
- 		*(int*)ldest = read_little_endian_int(lsrc); ldest[3]=0;
- #endif
-+#endif
  		lsrc += 3; ldest += 4;
  	}
  	static int IsRev(void) { return 0; }
-@@ -1246,6 +1251,9 @@ public:
+@@ -1246,13 +1240,7 @@ public:
  		lsrc += 2;
  	}
  	static void Copy1Pixel(const char*& lsrc, char*& ldest) {
-+#ifdef __NetBSD__
+-#ifdef WORDS_BIGENDIAN
+-		ldest[0] = lsrc[0];
+-		ldest[1] = lsrc[1];
+-		ldest[2] = lsrc[2];
+-#else /* LITTLE ENDIAN / intel architecture */
+-		*(int*)ldest = *(int*)lsrc;
+-#endif
 +		memcpy(ldest, lsrc, 3);
-+#else
- #ifdef WORDS_BIGENDIAN
- 		ldest[0] = lsrc[0];
- 		ldest[1] = lsrc[1];
-@@ -1253,6 +1261,7 @@ public:
- #else /* LITTLE ENDIAN / intel architecture */
- 		*(int*)ldest = *(int*)lsrc;
- #endif
-+#endif
  		lsrc += 3; ldest += 3;
  	}
  	static int IsRev(void) { return 1; }
-@@ -1279,7 +1288,7 @@ bool PDTCONV::Read(char* image) {
+@@ -1279,7 +1267,7 @@ bool PDTCONV::Read(char* image) {
  	int i; int len = width*height;
  	src = buf; dest = image;
  	for (i=0; i<len; i++) {
@@ -50,7 +45,7 @@ $NetBSD$
  		src++;
  		dest += 4;
  	}
-@@ -1328,9 +1337,12 @@ bool PDTCONV::Read_PDT11(char* image) {
+@@ -1328,9 +1316,12 @@ bool PDTCONV::Read_PDT11(char* image) {
  		cur += 4;
  	}
  	src = image + width*height;
@@ -66,7 +61,7 @@ $NetBSD$
  	return true;
  }
  
-@@ -1475,8 +1487,8 @@ bool G00CONV::Read_Type1(char* image) {
+@@ -1475,8 +1466,8 @@ bool G00CONV::Read_Type1(char* image) {
  	srcend = uncompress_data + uncompress_size;
  	dest = image; destend = image + width*height*4;
  	while(dest < destend && src < srcend) {
@@ -77,7 +72,7 @@ $NetBSD$
  	}
  	delete[] uncompress_data;
  	return true;
-@@ -1541,16 +1553,17 @@ bool G00CONV::Read_Type2(char* image) {
+@@ -1541,16 +1532,17 @@ bool G00CONV::Read_Type2(char* image) {
  
  void G00CONV::Copy_32bpp(char* image, int x, int y, const char* src, int bpl, int h) {
  	int i;
@@ -99,7 +94,7 @@ $NetBSD$
  	}
  }
  
-@@ -1560,10 +1573,10 @@ void GRPCONV::CopyRGBA_rev(char* image, 
+@@ -1560,10 +1552,10 @@ void GRPCONV::CopyRGBA_rev(char* image, 
  	int len = width * height;
  	int i;
  	unsigned char* s = (unsigned char*)buf;
@@ -113,7 +108,7 @@ $NetBSD$
  	}
  	return;
  }
-@@ -1576,9 +1589,10 @@ void GRPCONV::CopyRGBA(char* image, cons
+@@ -1576,9 +1568,10 @@ void GRPCONV::CopyRGBA(char* image, cons
  	/* 色変換を行う */
  	int len = width * height;
  	int i;
@@ -126,7 +121,7 @@ $NetBSD$
  		buf += 4;
  	}
  	return;
-@@ -1588,10 +1602,10 @@ void GRPCONV::CopyRGB(char* image, const
+@@ -1588,10 +1581,10 @@ void GRPCONV::CopyRGB(char* image, const
  	int len = width * height;
  	int i;
  	unsigned char* s = (unsigned char*)buf;
