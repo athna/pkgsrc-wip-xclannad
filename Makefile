@@ -6,7 +6,7 @@ PKGNAME=	xclannad-0.07hc
 CATEGORIES=	games
 MASTER_SITES=	http://www.creator.club.ne.jp/~jagarl/
 
-MAINTAINER=	pkgsrc-users@NetBSD.org
+MAINTAINER=	tsutsui@NetBSD.org
 HOMEPAGE=	http://www.creator.club.ne.jp/~jagarl/
 COMMENT=	Interpretor to execute REALLIVE games for Microsoft Windows
 LICENSE=	modified-bsd AND gnu-gpl-v2
