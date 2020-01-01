@@ -2,6 +2,7 @@ $NetBSD$
 
 SHA1 (xclannad-7hc.tar.gz) = fbe63701a47a1bc90aca8ab8d0b41ca3b5c9d114
 RMD160 (xclannad-7hc.tar.gz) = a7bea485587c59d7797aa1bde01f0eb963122d02
+SHA512 (xclannad-7hc.tar.gz) = 5d14c1ca6932d0a013e36c2af51d0d4de2cb73e4c438ccf2bebf03f223a62649203726cc552f975e3177ea614f79c1d2d0d36220116289f0bb8f65a74997ac27
 Size (xclannad-7hc.tar.gz) = 534245 bytes
 SHA1 (patch-Makefile.in) = 3586afaf131737ded3ac1b64bfa56b3c357f3269
 SHA1 (patch-font_font__peer__ft2.cc) = cb40078c701d1bf6c5113d21890ed8d9fbb18b62

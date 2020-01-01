@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--with-audiodev=/dev/audio
 
 SUBST_CLASSES+=		path
 SUBST_MESSAGE.path=	Fixing hardcoded paths.
-SUBST_STAGE.path=	post-patch
+SUBST_STAGE.path=	pre-configure
 SUBST_FILES.path=	configure font/font_peer_ft2.cc
 SUBST_SED.path=		-e 's|/usr/local/|${PREFIX}/|g'
 SUBST_SED.path+=	-e 's|/usr/pkg/|${PREFIX}/|g'
