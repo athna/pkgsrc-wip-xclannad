@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.creator.club.ne.jp/~jagarl/
 
 MAINTAINER=	tsutsui@NetBSD.org
-HOMEPAGE=	http://www.creator.club.ne.jp/~jagarl/
+HOMEPAGE=	https://web.archive.org/web/20100331135549/http://www.creator.club.ne.jp/~jagarl/xclannad.html
 COMMENT=	Interpretor to execute REALLIVE games for Microsoft Windows
 LICENSE=	modified-bsd AND gnu-gpl-v2
 
